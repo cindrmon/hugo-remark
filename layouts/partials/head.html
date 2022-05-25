@@ -5,7 +5,11 @@
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
   <!-- Styles -->
-  {{ $sass := resources.Get "sass/main.scss" | resources.ToCSS }}
-  <link rel="stylesheet" href="{{ $sass.RelPermalink }}" />
+  {{ partial "sassify" "sass/main.scss" }}
 
+  <!-- Custom CSS to override theme properties (/assets/sass/custom.scss) -->
+  {{ if (fileExists "sass/custom.scss") -}} 
+    {{ partial "sassify" "sass/custom.scss" }}
+  {{ end }}
+  
 </head>

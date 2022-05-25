@@ -1,0 +1,13 @@
+{{ $sassOpts := (dict 
+    "transpiler" "libsass"
+    "outputStyle" "compressed"
+) }}
+{{ if eq hugo.Environment "development" }}
+    {{ $sassOpts := (dict 
+        "transpiler" "libsass"
+        "enableSourceMap" true
+    ) }}
+{{ end }}
+
+{{ $sass := resources.Get . | toCSS $sassOpts | postCSS | fingerprint "md5" }}
+<link rel="stylesheet" href="{{ $sass.RelPermalink }}" integrity="{{ $sass.Data.Integrity }}">
