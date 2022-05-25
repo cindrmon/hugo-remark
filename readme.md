@@ -9,6 +9,7 @@ What is **remark.js**?
 [RemarkJS](https://github.com/gnab/remark) is a simple slide show generator from markdown files. It is not to be confused with a similar project called [Remark](https://github.com/remarkjs/remark), which also deals stuff with markdown, but does **not** primarily make slideshows from markdown.
 
 What is **sass**?
+
 [sass](https://sass-lang.com/), or Syntactically Awesome Stylesheets, is basically similar to CSS, but with more functionality built on top of it. It is also referred to 'CSS with superpowers'.
 
 ## About this theme
